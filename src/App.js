@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import OneSignal from 'react-onesignal';
 
 function App() {
+
+  useEffect(() => {
+    OneSignal.init({
+      appId: process.env.REACT_APP_ONESIGNAL_APP_ID,
+    })
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
